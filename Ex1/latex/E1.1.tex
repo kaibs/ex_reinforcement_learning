@@ -1,14 +1,29 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
-\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
 \usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
 \usepackage{calc} % To reset the counter in the document after title page
 \usepackage{enumitem} % Includes lists
 \usepackage{caption}
+\captionsetup[figure]{font=small,labelfont=small,labelfont=bf}
 \usepackage{subcaption}
 \usepackage{amsmath}
+\usepackage{fancyvrb,newverbs,xcolor}
+\usepackage{verbatim}
+
+\definecolor{cverbbg}{gray}{0.93}
+
+\newenvironment{lcverbatim}
+ {\SaveVerbatim{cverb}}
+ {\endSaveVerbatim
+  \flushleft\fboxrule=0pt\fboxsep=.5em
+  \colorbox{cverbbg}{%
+    \makebox[\dimexpr\linewidth-2\fboxsep][l]{\BUseVerbatim{cverb}}%
+  }
+  \endflushleft
+}
 
 \renewcommand\thesection{Task \arabic{section}}
 \renewcommand\thesubsection{\alph{subsection}.)}
@@ -74,7 +89,7 @@ Step 1 (from $Q_{1}$ to $Q_{2}$) was definitely a random step because $Q_{1}(a_{
 \end{tabular}
 \end{center}
 
-A random selection also has to be occured in step 2 ($Q_{2} \; \rightarrow \; Q_{3}$), because $A_{2}=2$ despite the 
+\flushleft A random selection also has to be occured in step 2 ($Q_{2} \; \rightarrow \; Q_{3}$), because $A_{2}=2$ despite the 
 $\underset{a}{\operatorname{argmax}}$
 being $1$. Also in the fifth step ($Q_{5} \; \rightarrow \; Q_{6}$) action $A_{3}$ was selected, 
 which had to be a random selection too.
@@ -87,7 +102,56 @@ Especially step 3 ($Q_{3} \; \rightarrow \; Q_{4}$) is a likely candidate, becau
 But even if the chosen $A_{i}$ is the $\underset{a}{\operatorname{argmax}}Q_{t}(a)$, it is still possible that this was a random selection. 
 
 
+\section{}
 
+\stepcounter{subsection}
+\stepcounter{subsection}
+\subsection{}
+
+As we can see that the $\epsilon$-greedy policy works better in the long term than the greedy strategy.
+A reason might be that the greedy policy can get stuck at local maxima, while the exploring behaviour
+of the $\epsilon$-greedy still allows for testing new/other machines.
+
+
+\begin{figure}[h!]
+    \includegraphics[width=.7\textwidth]{fig_esp_greedy.eps}
+    \centering
+    \caption{plot of the greedy (blue) and the $\epsilon$-greedy (orange) policy}
+    \label{fig1}
+\end{figure}
+
+\subsection{}
+
+It might be useful to be more explorative in the beginning of our runtime to while being more exploitive 
+the nearer we get to the end of our trials. This way we are more likely to find the most rewarding 
+action(s) at the start and maximize our total reward towards the end. \newline
+This stratety would be especially useful for cases were we don't have that many trials. \newline
+For example we can start with a higher $\epsilon=0.5$ than before and slowly converge to our previous 
+value $\epsilon=0.1$: \newpage
+
+\begin{center}
+    \begin{lcverbatim}
+        eps = 0.5
+        eps_add = float(0.4/timesteps)
+
+        while bandit.total_played < timesteps:
+            if random.random() < (eps - bandit.total_played*eps_add):
+                a = random.randint(0,(bandit.n_arms-1))
+            else:
+                a = np.argmax(Q)
+    \end{lcverbatim}
+\end{center}
+
+
+\flushleft As you can see in in figure \ref{fig2} this leads to less rewards in the beginning, but performes better
+than the previous methods after some time.
+
+\begin{figure}[h!]
+    \includegraphics[width=.7\textwidth]{fig_experimental.eps}
+    \centering
+    \caption{plot of the strategy with decreasing explorativity (green) compared with the previous methods}
+    \label{fig2}
+\end{figure}
 
 
 
