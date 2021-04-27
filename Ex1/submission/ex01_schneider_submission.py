@@ -91,8 +91,8 @@ def variable_greedy(bandit, timesteps):
     Q = np.zeros(bandit.n_arms)
     possible_arms = range(bandit.n_arms)
 
-    eps = 0.5# init with eps way higher than before
-    eps_add = float(0.5/(timesteps*0.5))
+    eps = 0.5   # init with eps way higher than before
+    eps_add = float(0.5/(timesteps*0.5)) # factor for varying eps
 
     # init vars
     for i in possible_arms:
@@ -100,15 +100,13 @@ def variable_greedy(bandit, timesteps):
         rewards[i] += reward_a
         n_plays += 1
         Q[i] = rewards[i]
-
-
-    
     
     while bandit.total_played < timesteps:
 
-        # random action
+        # variable eps-greedy for first half of trials
         if bandit.total_played < (timesteps*0.5):
 
+            # random action
             if random.random() < (eps - bandit.total_played*eps_add):
                 a = random.randint(0,(bandit.n_arms-1))
 
@@ -116,9 +114,9 @@ def variable_greedy(bandit, timesteps):
             else:
                 a = np.argmax(Q)
 
+        # greedy strategy for second half of trials
         else:
             a = np.argmax(Q)
-
 
         # play arm & update vars
         reward_a = bandit.play_arm(a)

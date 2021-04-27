@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.11)  25 APR 2021 21:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.11)  27 APR 2021 10:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -531,7 +531,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 119.
  [2 </home/kbs/reinforcement_learning/Ex1/latex/fig_esp_greedy-eps-converted-to.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 142.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 146.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -539,42 +539,42 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package epstopdf Info: Source file: <fig_experimental.eps>
-(epstopdf)                    date: 2021-04-25 21:03:55
-(epstopdf)                    size: 87033 bytes
-(epstopdf)             Output file: <fig_experimental-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-04-25 21:31:38
-(epstopdf)                    size: 30487 bytes
-(epstopdf)             Command: <repstopdf --outfile=fig_experimental-eps-converted-to.pdf fig_experimental.eps>
-(epstopdf)             \includegraphics on input line 150.
+Package epstopdf Info: Source file: <fig_experimental_3.eps>
+(epstopdf)                    date: 2021-04-27 10:36:43
+(epstopdf)                    size: 89890 bytes
+(epstopdf)             Output file: <fig_experimental_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-04-27 10:36:54
+(epstopdf)                    size: 32231 bytes
+(epstopdf)             Command: <repstopdf --outfile=fig_experimental_3-eps-converted-to.pdf fig_experimental_3.eps>
+(epstopdf)             \includegraphics on input line 155.
 Package epstopdf Info: Output file is already uptodate.
-<fig_experimental-eps-converted-to.pdf, id=84, 462.52798pt x 346.89601pt>
-File: fig_experimental-eps-converted-to.pdf Graphic file (type pdf)
-<use fig_experimental-eps-converted-to.pdf>
-Package pdftex.def Info: fig_experimental-eps-converted-to.pdf  used on input line 150.
-(pdftex.def)             Requested size: 317.87689pt x 238.4163pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 158.
- [3 </home/kbs/reinforcement_learning/Ex1/latex/fig_experimental-eps-converted-to.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 158.
+<fig_experimental_3-eps-converted-to.pdf, id=84, 931.56032pt x 717.64113pt>
+File: fig_experimental_3-eps-converted-to.pdf Graphic file (type pdf)
+<use fig_experimental_3-eps-converted-to.pdf>
+Package pdftex.def Info: fig_experimental_3-eps-converted-to.pdf  used on input line 155.
+(pdftex.def)             Requested size: 317.87689pt x 244.88173pt.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 163.
+ [3 </home/kbs/reinforcement_learning/Ex1/latex/fig_experimental_3-eps-converted-to.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 163.
  (/home/kbs/reinforcement_learning/Ex1/latex/E1.1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 158.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 158.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 163.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 163.
 Package rerunfilecheck Info: File `E1.1.out' has not changed.
 (rerunfilecheck)             Checksum: 85D554C6F592691F47FFA4C2D54EEA5F;384.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 158.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 163.
  ) 
 Here is how much of TeX's memory you used:
- 10973 strings out of 483057
- 173826 string characters out of 5962301
- 484004 words of memory out of 5000000
+ 10976 strings out of 483057
+ 173865 string characters out of 5962301
+ 484003 words of memory out of 5000000
  25729 multiletter control sequences out of 15000+600000
- 596684 words of font info for 144 fonts, out of 8000000 for 9000
+ 596814 words of font info for 146 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  41i,8n,42p,371b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/kbs/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/kbs/reinforcement_learning/Ex1/latex/E1.1.pdf (3 pages, 123829 bytes).
+Output written on /home/kbs/reinforcement_learning/Ex1/latex/E1.1.pdf (3 pages, 125985 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
+ 190 PDF objects out of 1000 (max. 8388607)
  91 compressed objects within 1 object stream
  14 named destinations out of 1000 (max. 500000)
  35403 words of extra memory for PDF output out of 35830 (max. 10000000)
