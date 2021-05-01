@@ -1,0 +1,162 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
+\usepackage{calc} % To reset the counter in the document after title page
+\usepackage{enumitem} % Includes lists
+\usepackage{caption}
+\captionsetup[figure]{font=small,labelfont=small,labelfont=bf}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{fancyvrb,newverbs,xcolor}
+\usepackage{verbatim}
+
+\definecolor{cverbbg}{gray}{0.93}
+
+\newenvironment{lcverbatim}
+ {\SaveVerbatim{cverb}}
+ {\endSaveVerbatim
+  \flushleft\fboxrule=0pt\fboxsep=.5em
+  \colorbox{cverbbg}{%
+    \makebox[\dimexpr\linewidth-2\fboxsep][l]{\BUseVerbatim{cverb}}%
+  }
+  \endflushleft
+}
+
+\renewcommand\thesection{Task \arabic{section}}
+\renewcommand\thesubsection{\alph{subsection}.)}
+\renewcommand\thesubsubsection{\Roman{subsubsection}:}
+
+\frenchspacing
+\linespread{1.2}
+\usepackage[a4paper, lmargin=0.12\paperwidth, rmargin=0.12\paperwidth, tmargin=0.05\paperheight, bmargin=0.1\paperheight]{geometry}
+
+\usepackage[all]{nowidow} % Tries to remove widows
+\usepackage[protrusion=true,expansion=true]{microtype}
+
+\title{Exercise 2}
+\author{Kai Schneider}
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\section{ Formulating Problems}
+
+as a Markov Decision Process $MDP=\{S,A,T,R,\gamma\}$
+
+\subsection{chess}
+
+Discrete problem with a deterministic trasition function.
+
+\begin{itemize}
+    \item \textbf{states:} all allowed configurations of the playing pieces ($32$, $16$ for each player)
+    on the field ($8x8=64$ segments). The number and type of the remaining pieces influences the possible configurations.
+    \item \textbf{actions:} movements of the playing pieces. The number of available actions is determined by the current state 
+    (remaining pieces and reachable fields). 
+    \item \textbf{reward:} the only meaningful reward is determined by winning or loosing the game, since loosing playing pieces might be 
+    negative in the short run but benefit the long term strategy. 
+\end{itemize}
+
+
+\subsection{pick \& place robot}
+
+Continous problem (at least states and actions)
+
+\begin{itemize}
+    \item \textbf{states:} all possible configurations of the joint angles the endeffector/toolhead ($s \in \mathbb{R}^n$)
+    \item \textbf{actions:} all possible changes in joint angles and endeffector states ($a \in \mathbb{R}^n$)
+    \item \textbf{reward:} multiple possibilities for a reward signal, e.g.:
+        \begin{itemize}
+            \item positive reward for (succesfully) delivering a part
+            \item positive reward for moving with a part to the place location \\
+            (and vice versa a neg. reward for moving without one)
+        \end{itemize}
+\end{itemize}
+
+\subsection{drone}
+
+State- and action-space are also continuous, although the drone itself surely operates discrete.
+
+\begin{itemize}
+    \item \textbf{states:} 3D position and orientation ($6$ DOF) of the drone \\ (for the controller also speed and acceleration)
+    \item \textbf{actions:} changes/corrections in the rpm of the motors (assuming a multicopter-like drone)
+    \item \textbf{reward:} reward could be a value relative to the deviation to the target value/position/orientation.
+\end{itemize}
+
+
+\subsection{own problem - commissioning}
+
+Picking and packing a predefined list of articles/objects from a larger range of things. 
+
+\begin{itemize}
+    \item \textbf{states:} the current state is always described by the already collected items\\
+    (or in contrast all articles which still have to be collected).
+    \item \textbf{actions:} Each $a$ describes moving to another article and collecting it. 
+    $A$ is the always the set of all $a$'s for the remaining objects.
+    \item \textbf{reward:} Like in the chess example, only the result after reaching the terminal state (collected all articles)
+    is meaningful. Depending on the optimization goal a reward relative to the time (picking rate) or the covered distance (energie)
+    might be a good choice.
+\end{itemize}
+
+
+\section{Value Functions}
+
+
+\begin{align*}
+&\text{k-bandit:} && q(a)=\mathbb{E}[R_{t}|A_{t}=a] \\
+&\text{MDP:}      && q(s,a)= \mathbb{E}[ R_{t+1} +\gamma R_{t+2} +\gamma^{2}R_{t+3}+\dots | S_{t}=s, A_{t}=a]
+\end{align*}
+
+\subsection{}
+In contrast to the MDP, the bandits don't have multiple possible states. So each action $A_{t}$ immediately returns a reward $R_{t}$.
+This reward doesn't depend on previous states/actions, so the potential future rewards aren't relevant here.
+
+
+\subsection{}
+
+\begin{align*}
+    \upsilon_{\pi}(s)    = \mathbb{E}_{\pi}[G_{t}|S_{t}=s] 
+                    & = \sum_{a}\Pi(a|s)\sum_{s'}\sum_{r}p(s',r|s,a)[r+\gamma\mathbb{E}[G_{t+1}|S_{t+1}=s']]\\
+                    & \Leftrightarrow \sum_{a}\Pi(a|s)\sum_{s',r}p(s',r|s,a)[r+\gamma\sum_{a'}\Pi(a'|s')\mathbb{E}[G_{t+1}|S_{t+1}=s', A_{t+1}=a']]\\
+                    & = \sum_{a}\Pi(a|s)\sum_{s',r}p(s',r|s,a)[r+\gamma\sum_{a'}\Pi(a'|s')q_{\pi}(s',a')]\\
+                    & = \sum_{a}\Pi(a|s)q_{\pi}(s,a)
+\end{align*}
+
+\begin{flushright}
+    \begin{footnotesize}
+        with slides 2.31 \& 2.32 
+    \end{footnotesize}
+    $\;\;\;\square$
+\end{flushright}
+
+\subsection{} 
+
+\begin{align*}
+    \upsilon_{\pi}(s) & = \sum_{a}\Pi(a|s)\sum_{s',r}p(s',r|s,a)[r+\gamma\upsilon_{\pi}(s')]\\
+                      & = \sum_{a}\Pi(a|s)\sum_{s'}\sum_{r}p(s',r|s,a)[r+\gamma\upsilon_{\pi}(s')]\\
+                      & = \sum_{a}\Pi(a|s)\bigg[\sum_{s'}\sum_{r}p(s',r|s,a)r+\gamma\sum_{s'}\sum_{r}p(s',r|s,a)\upsilon_{\pi}(s')\biggr]\\
+                      & = \sum_{a}\Pi(a|s)\bigg[\sum_{s'}p(s'|s,a)r(s,a,s')+\gamma\sum_{s'}p(s'|s,a)\upsilon_{\pi}(s')\biggr]
+\end{align*}
+
+\begin{flushright}
+    \begin{footnotesize}
+        with slides 2.31 \& 2.21 
+    \end{footnotesize}
+    $\;\;\;\square$
+\end{flushright}
+
+
+
+
+
+
+
+
+
+
+\end{document}
