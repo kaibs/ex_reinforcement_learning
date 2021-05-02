@@ -13,7 +13,6 @@
 \usepackage{amsfonts}
 \usepackage{fancyvrb,newverbs,xcolor}
 \usepackage{verbatim}
-
 \definecolor{cverbbg}{gray}{0.93}
 
 \newenvironment{lcverbatim}
@@ -149,6 +148,71 @@ This reward doesn't depend on previous states/actions, so the potential future r
     \end{footnotesize}
     $\;\;\;\square$
 \end{flushright}
+
+
+
+
+\section{}
+
+\subsection{}
+
+With state space size of $|S|$ and an action space size of $|A|$ there exist $|\Pi|=|A|^{|S|}$ different policies.
+
+
+\subsection{}
+
+\begin{align*}
+    \upsilon_{\pi} & = r + \gamma P_{\pi} \upsilon_{\pi} \\
+    \big( I - \gamma P_{\pi} \bigr)\upsilon_{\pi}        & = r \\
+    \upsilon_{\pi} & = \big( I - \gamma P_{\pi} \bigr)^{-1}r
+\end{align*}
+
+\flushleft
+The return for the $3x3$ grid is the following:\\
+\vspace{5pt}
+policy left: $[0, 0, 0.537, 0, 0, 1.477, 0, 0, 5]$\\
+policy right: $[0.414, 0.775, 1.311, 0.364, 0.819,  2.295, 0.132, 0, 5]$\\
+\vspace{10pt}
+As we can see the values for the \textit{policy right} are on average much higher. This makes intuitivly sense because we
+start in the upper left corner of the grid and want to reach the bottom right one.
+
+
+\subsection{}
+
+The optimal value function $\upsilon_{\pi}$ is: \\
+$[0.49756712, 0.83213812, 1.31147541, 0.53617147, 0.97690441, 2.29508197
+0.3063837, 0, 5]$
+
+\vspace{10pt}
+
+There exist $8$ optimal policies which result in this value function:
+
+\begin{align*}
+[2, 2, 2, 3, 3, 2, 0, 0, 1]\\
+[1, 2, 2, 3, 3, 2, 0, 0, 2]\\
+[2, 2, 2, 3, 3, 2, 0, 0, 2]\\
+[2, 2, 2, 3, 3, 2, 0, 0, 3]\\
+[2, 2, 2, 3, 3, 2, 0, 0, 0]\\
+[1, 2, 2, 3, 3, 2, 0, 0, 1]\\
+[1, 2, 2, 3, 3, 2, 0, 0, 3]\\
+[1, 2, 2, 3, 3, 2, 0, 0, 0]
+\end{align*}
+
+
+\subsection{}
+
+Because of the complexity, even for a "slightly" larger state space of $4x4$ the computation time grows exponentially.\\
+While we had $|A|^{|S|}=4^9=262144$ different policies with the $3x3$ grid, we already have $4^{16}=4294967296$ for the 4x4.\\
+
+\vspace{10pt}
+
+In real world problems the state \& action spaces are typically much larger, so this kind of method to solve the problem
+is extremly inpractical.
+
+
+
+
+
 
 
 
