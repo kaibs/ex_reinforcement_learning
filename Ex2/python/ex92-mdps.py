@@ -59,7 +59,6 @@ def value_policy(policy):
 
 # iterate trough every value
 def recursive_policy(pol, s_idx, a, pols):
-
     # check if end is reached
     if s_idx >= n_states:
 
@@ -85,6 +84,25 @@ def recursive_policy(pol, s_idx, a, pols):
         recursive_policy(pol, s_new, a, pols)
 
 
+def recursive_v2(pol_max):
+    result = []
+
+    if len(pol_max)== 0:
+        result = []
+    elif len(pol_max)==1:
+        result = [[i] for i in range(pol_max[0] + 1)]
+    else:
+        # initial: [3,3,3,3,3,3,3,3,3]
+        first_val = pol_max[0]
+        rem_val = pol_max[1:]
+
+        for i in range(first_val+1):
+
+            for lst in recursive_v2(rem_val):
+
+                result.append([i] + lst)
+
+    return result
 
 
 def bruteforce_policies():
@@ -101,10 +119,13 @@ def bruteforce_policies():
     
     # TODO: implement code that tries all possible policies, calculate the values using def value_policy. Find the optimal values and the optimal policies to answer the exercise questions.
     # calc all possible pols
-    s_idx = -1
-    a_idx = 0
-    pols = []
-    recursive_policy(pol, s_idx, a_idx, pols)
+    #s_idx = -1
+    #a_idx = 0
+    #pols = []
+    #recursive_policy(pol, s_idx, a_idx, pols)
+
+    pol_max = [3]*9
+    pols = recursive_v2(pol_max)
 
     # calc values for pols
     vals = []
