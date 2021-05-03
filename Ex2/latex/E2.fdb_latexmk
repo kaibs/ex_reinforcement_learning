@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1619985997 "/home/kbs/reinforcement_learning/Ex2/latex/E2.tex" "/home/kbs/reinforcement_learning/Ex2/latex/E2.pdf" "E2" 1619985997
+["pdflatex"] 1620071100 "/home/kbs/reinforcement_learning/Ex2/latex/E2.tex" "/home/kbs/reinforcement_learning/Ex2/latex/E2.pdf" "E2" 1620071101
   "/etc/texmf/web2c/texmf.cnf" 1615468788 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kbs/reinforcement_learning/Ex2/latex/E2.aux" 1619985997 2237 9f7d33cb1577f89a7f4b3d61bd5f0464 ""
-  "/home/kbs/reinforcement_learning/Ex2/latex/E2.tex" 1619985996 7667 36d5905619de535c89917f402d9ee07a ""
+  "/home/kbs/reinforcement_learning/Ex2/latex/E2.aux" 1620071100 2237 9f7d33cb1577f89a7f4b3d61bd5f0464 ""
+  "/home/kbs/reinforcement_learning/Ex2/latex/E2.tex" 1620071100 8925 2e093790d703039b07d96fbbfb392ae6 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -128,12 +128,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1615473702 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1615473708 5797034 32770257fec0df77d7b9329befbe1f0e ""
-  "E2.aux" 1619985997 2237 9f7d33cb1577f89a7f4b3d61bd5f0464 "pdflatex"
-  "E2.out" 1619985997 743 2a17235c28ca2d8936835e4b6cd7da6a "pdflatex"
-  "E2.tex" 1619985996 7667 36d5905619de535c89917f402d9ee07a ""
+  "E2.aux" 1620071100 2237 9f7d33cb1577f89a7f4b3d61bd5f0464 "pdflatex"
+  "E2.out" 1620071100 743 2a17235c28ca2d8936835e4b6cd7da6a "pdflatex"
+  "E2.tex" 1620071100 8925 2e093790d703039b07d96fbbfb392ae6 ""
   (generated)
-  "/home/kbs/reinforcement_learning/Ex2/latex/E2.pdf"
   "E2.aux"
+  "/home/kbs/reinforcement_learning/Ex2/latex/E2.pdf"
   "/home/kbs/reinforcement_learning/Ex2/latex/E2.log"
   "E2.out"
   "E2.pdf"

@@ -1,6 +1,8 @@
 import gym
 import numpy as np
 from copy import copy
+from itertools import product
+import time
 
 # Init environment
 # Lets use a smaller 3x3 custom map for faster computations
@@ -84,32 +86,48 @@ def recursive_policy(pol, s_idx, a, pols):
         recursive_policy(pol, s_new, a, pols)
 
 
-def recursive_v2(pol_max):
-    result = []
+def iterate_arr(arr):
+    arrays = []
 
-    if len(pol_max)== 0:
-        result = []
-    elif len(pol_max)==1:
-        result = [[i] for i in range(pol_max[0] + 1)]
+    if len(arr) == 1:
+        arrays = [[i] for i in range(arr[0] + 1)]
+
     else:
-        # initial: [3,3,3,3,3,3,3,3,3]
-        first_val = pol_max[0]
-        rem_val = pol_max[1:]
+        first = arr[0]
+        rest = arr[1:]
 
-        for i in range(first_val+1):
+        for i in range(first + 1):
 
-            for lst in recursive_v2(rem_val):
+            for new_rest in iterate_arr(rest):
+                arrays.append([i] + new_rest)
 
-                result.append([i] + lst)
+    return arrays
 
-    return result
+
+def iterate_arr_term(arr):
+    arrays = []
+
+    if len(arr) == 1:
+        arrays = [[i] for i in range(arr[0] + 1)]
+
+    else:
+        first = arr[0]
+        rest = arr[1:]
+
+        if (first + 1) in terminals():
+            next = (first + 2)
+        else:
+            next = (first + 1)
+
+        for i in range(next):
+
+            for new_rest in iterate_arr(rest):
+                arrays.append([i] + new_rest)
+
+    return arrays
 
 
 def bruteforce_policies():
-
-    global opt_pol
-    global opt_v
-    global cntr
 
     terms = terminals()
     optimalpolicies = []
@@ -119,14 +137,29 @@ def bruteforce_policies():
     
     # TODO: implement code that tries all possible policies, calculate the values using def value_policy. Find the optimal values and the optimal policies to answer the exercise questions.
     # calc all possible pols
+
+    # use itertools  to check results
+    #pols = list(product(range(0,4), repeat=9))
+
     #s_idx = -1
     #a_idx = 0
     #pols = []
     #recursive_policy(pol, s_idx, a_idx, pols)
 
     pol_max = [3]*9
-    pols = recursive_v2(pol_max)
 
+
+    # first version without terminal conditions
+    start = time.time()
+    pols = iterate_arr(pol_max)
+    timer_normal = time.time() - start
+
+    # second version with terminal conditions
+    #start = time.time()
+    #pols = iterate_arr_term(pol_max)
+    #timer_term = time.time() - start
+
+    
     # calc values for pols
     vals = []
     for i in range(len(pols)):
@@ -161,6 +194,10 @@ def bruteforce_policies():
     print(len(optimalpolicies))
     print("optimal policies:")
     print(np.array(optimalpolicies))
+    print("\n")
+    print("computation time normal: " + str(timer_normal))
+    #print("computation time terminal: " + str(timer_term))
+
     return optimalpolicies
 
 
@@ -180,8 +217,6 @@ def main():
     print (value_policy(policy_left))
     print("Value function for policy_right (always going right):")
     print (value_policy(policy_right))
-
-    
 
     optimalpolicies = bruteforce_policies()
 

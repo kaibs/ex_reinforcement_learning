@@ -180,34 +180,44 @@ start in the upper left corner of the grid and want to reach the bottom right on
 \subsection{}
 
 The optimal value function $\upsilon_{\pi}$ is: \\
-$[0.49756712, 0.83213812, 1.31147541, 0.53617147, 0.97690441, 2.29508197
-0.3063837, 0, 5]$
+$[0.49756712,\; 0.83213812,\; 1.31147541,\; 0.53617147,\; 0.97690441,\; 2.29508197,\;
+0.3063837,\; 0.0,\; 5.0]$
 
 \vspace{10pt}
 
-There exist $8$ optimal policies which result in this value function:
+There exist $32$ optimal policies which result in this value function:
+
+%\begin{align*}
+%[2, 2, 2, 3, 3, 2, 0, 0, 1]\\
+%[1, 2, 2, 3, 3, 2, 0, 0, 2]\\
+%[2, 2, 2, 3, 3, 2, 0, 0, 2]\\
+%[2, 2, 2, 3, 3, 2, 0, 0, 3]\\
+%[2, 2, 2, 3, 3, 2, 0, 0, 0]\\
+%[1, 2, 2, 3, 3, 2, 0, 0, 1]\\
+%[1, 2, 2, 3, 3, 2, 0, 0, 3]\\
+%[1, 2, 2, 3, 3, 2, 0, 0, 0]
+%\end{align*}
 
 \begin{align*}
-[2, 2, 2, 3, 3, 2, 0, 0, 1]\\
-[1, 2, 2, 3, 3, 2, 0, 0, 2]\\
-[2, 2, 2, 3, 3, 2, 0, 0, 2]\\
-[2, 2, 2, 3, 3, 2, 0, 0, 3]\\
-[2, 2, 2, 3, 3, 2, 0, 0, 0]\\
-[1, 2, 2, 3, 3, 2, 0, 0, 1]\\
-[1, 2, 2, 3, 3, 2, 0, 0, 3]\\
-[1, 2, 2, 3, 3, 2, 0, 0, 0]
+[2, 2, 2, 3, 3, 2, 0, 0, 1]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 1, 0]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 0, 2]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 1, 3]\\
+[2, 2, 2, 3, 3, 2, 0, 2, 1]\;\;\;\;\;\;[2, 2, 2, 3, 3, 2, 0, 1, 2]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 3, 3]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 2, 1]\\
+[2, 2, 2, 3, 3, 2, 0, 3, 2]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 3, 0]\;\;\;\;\;\;[2, 2, 2, 3, 3, 2, 0, 0, 3]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 0, 1]\\
+[2, 2, 2, 3, 3, 2, 0, 0, 0]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 1, 2]\;\;\;\;\;\;[2, 2, 2, 3, 3, 2, 0, 1, 1]\;\;\;\;\;\;[2, 2, 2, 3, 3, 2, 0, 2, 0]\\
+[2, 2, 2, 3, 3, 2, 0, 3, 1]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 2, 0]\;\;\;\;\;\;[2, 2, 2, 3, 3, 2, 0, 2, 3]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 2, 3]\\
+[1, 2, 2, 3, 3, 2, 0, 3, 2]\;\;\;\;\;\;[2, 2, 2, 3, 3, 2, 0, 0, 2]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 0, 3]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 0, 0]\\
+[1, 2, 2, 3, 3, 2, 0, 1, 1]\;\;\;\;\;\;[2, 2, 2, 3, 3, 2, 0, 1, 3]\;\;\;\;\;\;[2, 2, 2, 3, 3, 2, 0, 2, 2]\;\;\;\;\;\;[2, 2, 2, 3, 3, 2, 0, 1, 0]\\
+[2, 2, 2, 3, 3, 2, 0, 3, 3]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 3, 1]\;\;\;\;\;\;[2, 2, 2, 3, 3, 2, 0, 3, 0]\;\;\;\;\;\;[1, 2, 2, 3, 3, 2, 0, 2, 2]
 \end{align*}
-
 
 \subsection{}
 
-Because of the complexity, even for a "slightly" larger state space of $4x4$ the computation time grows exponentially.\\
-While we had $|A|^{|S|}=4^9=262144$ different policies with the $3x3$ grid, we already have $4^{16}=4294967296$ for the 4x4.\\
+Because of the complexity, even for a "slightly" larger state space of $4\text{x}4$ the computation time grows exponentially.\\
+While we had $|A|^{|S|}=4^9=262144$ different policies with the $3\text{x}3$ grid, we already have $4^{16}=4294967296$ for the $4\text{x}4$.\\
 
 \vspace{10pt}
 
 In real world problems the state \& action spaces are typically much larger, so this kind of method to solve the problem
-is extremly inpractical.
+is extremly inpractical.~
 
 
 
