@@ -3,7 +3,8 @@ import numpy as np
 from copy import copy
 
 # Init environment
-env = gym.make("FrozenLake-v0")
+#env = gym.make("FrozenLake-v0")
+env = gym.make("FrozenLake-v0", map_name="8x8")
 # you can set it to deterministic with:
 # env = gym.make("FrozenLake-v0", is_slippery=False)
 
