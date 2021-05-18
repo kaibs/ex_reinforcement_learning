@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.11)  18 MAY 2021 04:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.11)  18 MAY 2021 15:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -518,12 +518,12 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 <10k_eps.png, id=36, 2615.7725pt x 792.9625pt>
 File: 10k_eps.png Graphic file (type png)
 <use 10k_eps.png>
-Package pdftex.def Info: 10k_eps.png  used on input line 76.
+Package pdftex.def Info: 10k_eps.png  used on input line 77.
 (pdftex.def)             Requested size: 317.87689pt x 96.36134pt.
 <500k_eps.png, id=38, 2621.795pt x 796.9775pt>
 File: 500k_eps.png Graphic file (type png)
 <use 500k_eps.png>
-Package pdftex.def Info: 500k_eps.png  used on input line 85.
+Package pdftex.def Info: 500k_eps.png  used on input line 86.
 (pdftex.def)             Requested size: 317.87689pt x 96.6182pt.
 
 
@@ -532,134 +532,109 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/kbs/reinforcement_learning/Ex4/latex/10k_eps.png>]
-Package epstopdf Info: Source file: <0k.eps>
-(epstopdf)                    date: 2021-05-18 04:28:32
-(epstopdf)                    size: 63526 bytes
-(epstopdf)             Output file: <0k-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-05-18 04:29:01
-(epstopdf)                    size: 15383 bytes
-(epstopdf)             Command: <repstopdf --outfile=0k-eps-converted-to.pdf 0k.eps>
-(epstopdf)             \includegraphics on input line 101.
+Package epstopdf Info: Source file: <es-v3-0k.eps>
+(epstopdf)                    date: 2021-05-18 15:10:58
+(epstopdf)                    size: 380282 bytes
+(epstopdf)             Output file: <es-v3-0k-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-05-18 15:17:40
+(epstopdf)                    size: 19512 bytes
+(epstopdf)             Command: <repstopdf --outfile=es-v3-0k-eps-converted-to.pdf es-v3-0k.eps>
+(epstopdf)             \includegraphics on input line 102.
 Package epstopdf Info: Output file is already uptodate.
-<0k-eps-converted-to.pdf, id=48, 1105.0083pt x 477.70471pt>
-File: 0k-eps-converted-to.pdf Graphic file (type pdf)
-<use 0k-eps-converted-to.pdf>
-Package pdftex.def Info: 0k-eps-converted-to.pdf  used on input line 101.
-(pdftex.def)             Requested size: 317.87689pt x 137.41557pt.
-<100k.png, id=49, 1094.8905pt x 508.0581pt>
-File: 100k.png Graphic file (type png)
-<use 100k.png>
-Package pdftex.def Info: 100k.png  used on input line 108.
-(pdftex.def)             Requested size: 317.87689pt x 147.50362pt.
-Package epstopdf Info: Source file: <200k.eps>
-(epstopdf)                    date: 2021-05-18 04:32:31
-(epstopdf)                    size: 66342 bytes
-(epstopdf)             Output file: <200k-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-05-18 04:33:24
-(epstopdf)                    size: 15431 bytes
-(epstopdf)             Command: <repstopdf --outfile=200k-eps-converted-to.pdf 200k.eps>
-(epstopdf)             \includegraphics on input line 115.
+<es-v3-0k-eps-converted-to.pdf, id=48, 1600.78055pt x 664.16129pt>
+File: es-v3-0k-eps-converted-to.pdf Graphic file (type pdf)
+<use es-v3-0k-eps-converted-to.pdf>
+Package pdftex.def Info: es-v3-0k-eps-converted-to.pdf  used on input line 102.
+(pdftex.def)             Requested size: 317.87689pt x 131.8874pt.
+Package epstopdf Info: Source file: <es-v3-100k.eps>
+(epstopdf)                    date: 2021-05-18 15:11:30
+(epstopdf)                    size: 271417 bytes
+(epstopdf)             Output file: <es-v3-100k-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-05-18 15:17:40
+(epstopdf)                    size: 19127 bytes
+(epstopdf)             Command: <repstopdf --outfile=es-v3-100k-eps-converted-to.pdf es-v3-100k.eps>
+(epstopdf)             \includegraphics on input line 109.
 Package epstopdf Info: Output file is already uptodate.
-<200k-eps-converted-to.pdf, id=50, 1042.85606pt x 479.87279pt>
-File: 200k-eps-converted-to.pdf Graphic file (type pdf)
-<use 200k-eps-converted-to.pdf>
-Package pdftex.def Info: 200k-eps-converted-to.pdf  used on input line 115.
-(pdftex.def)             Requested size: 317.87689pt x 146.26945pt.
+<es-v3-100k-eps-converted-to.pdf, id=49, 1436.72758pt x 534.79799pt>
+File: es-v3-100k-eps-converted-to.pdf Graphic file (type pdf)
+<use es-v3-100k-eps-converted-to.pdf>
+Package pdftex.def Info: es-v3-100k-eps-converted-to.pdf  used on input line 109.
+(pdftex.def)             Requested size: 317.87689pt x 118.31691pt.
+Package epstopdf Info: Source file: <es-v3-200k.eps>
+(epstopdf)                    date: 2021-05-18 15:12:10
+(epstopdf)                    size: 324136 bytes
+(epstopdf)             Output file: <es-v3-200k-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-05-18 15:17:40
+(epstopdf)                    size: 17689 bytes
+(epstopdf)             Command: <repstopdf --outfile=es-v3-200k-eps-converted-to.pdf es-v3-200k.eps>
+(epstopdf)             \includegraphics on input line 116.
+Package epstopdf Info: Output file is already uptodate.
+<es-v3-200k-eps-converted-to.pdf, id=50, 1634.02475pt x 600.5637pt>
+File: es-v3-200k-eps-converted-to.pdf Graphic file (type pdf)
+<use es-v3-200k-eps-converted-to.pdf>
+Package pdftex.def Info: es-v3-200k-eps-converted-to.pdf  used on input line 116.
+(pdftex.def)             Requested size: 317.87689pt x 116.82994pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package epstopdf Info: Source file: <300k.eps>
-(epstopdf)                    date: 2021-05-18 04:33:46
-(epstopdf)                    size: 66323 bytes
-(epstopdf)             Output file: <300k-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-05-18 04:34:02
-(epstopdf)                    size: 15454 bytes
-(epstopdf)             Command: <repstopdf --outfile=300k-eps-converted-to.pdf 300k.eps>
-(epstopdf)             \includegraphics on input line 122.
+Package epstopdf Info: Source file: <es-v3-500k.eps>
+(epstopdf)                    date: 2021-05-18 15:13:34
+(epstopdf)                    size: 306507 bytes
+(epstopdf)             Output file: <es-v3-500k-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-05-18 15:17:40
+(epstopdf)                    size: 17680 bytes
+(epstopdf)             Command: <repstopdf --outfile=es-v3-500k-eps-converted-to.pdf es-v3-500k.eps>
+(epstopdf)             \includegraphics on input line 123.
 Package epstopdf Info: Output file is already uptodate.
-<300k-eps-converted-to.pdf, id=51, 1134.63902pt x 525.40291pt>
-File: 300k-eps-converted-to.pdf Graphic file (type pdf)
-<use 300k-eps-converted-to.pdf>
-Package pdftex.def Info: 300k-eps-converted-to.pdf  used on input line 122.
-(pdftex.def)             Requested size: 317.87689pt x 147.19197pt.
+<es-v3-500k-eps-converted-to.pdf, id=51, 1507.55225pt x 577.43733pt>
+File: es-v3-500k-eps-converted-to.pdf Graphic file (type pdf)
+<use es-v3-500k-eps-converted-to.pdf>
+Package pdftex.def Info: es-v3-500k-eps-converted-to.pdf  used on input line 123.
+(pdftex.def)             Requested size: 317.87689pt x 121.75002pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package epstopdf Info: Source file: <400k.eps>
-(epstopdf)                    date: 2021-05-18 04:34:32
-(epstopdf)                    size: 66767 bytes
-(epstopdf)             Output file: <400k-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-05-18 04:34:48
-(epstopdf)                    size: 15438 bytes
-(epstopdf)             Command: <repstopdf --outfile=400k-eps-converted-to.pdf 400k.eps>
-(epstopdf)             \includegraphics on input line 129.
+Package epstopdf Info: Source file: <es-v3-1000k.eps>
+(epstopdf)                    date: 2021-05-18 15:16:18
+(epstopdf)                    size: 302351 bytes
+(epstopdf)             Output file: <es-v3-1000k-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-05-18 15:17:41
+(epstopdf)                    size: 17639 bytes
+(epstopdf)             Command: <repstopdf --outfile=es-v3-1000k-eps-converted-to.pdf es-v3-1000k.eps>
+(epstopdf)             \includegraphics on input line 130.
 Package epstopdf Info: Output file is already uptodate.
-<400k-eps-converted-to.pdf, id=52, 1028.40216pt x 450.9648pt>
-File: 400k-eps-converted-to.pdf Graphic file (type pdf)
-<use 400k-eps-converted-to.pdf>
-Package pdftex.def Info: 400k-eps-converted-to.pdf  used on input line 129.
-(pdftex.def)             Requested size: 317.87689pt x 139.39165pt.
+<es-v3-1000k-eps-converted-to.pdf, id=52, 1492.37555pt x 566.59679pt>
+File: es-v3-1000k-eps-converted-to.pdf Graphic file (type pdf)
+<use es-v3-1000k-eps-converted-to.pdf>
+Package pdftex.def Info: es-v3-1000k-eps-converted-to.pdf  used on input line 130.
+(pdftex.def)             Requested size: 317.87689pt x 120.68336pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package epstopdf Info: Source file: <500k.eps>
-(epstopdf)                    date: 2021-05-18 04:38:40
-(epstopdf)                    size: 65935 bytes
-(epstopdf)             Output file: <500k-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-05-18 04:38:59
-(epstopdf)                    size: 15464 bytes
-(epstopdf)             Command: <repstopdf --outfile=500k-eps-converted-to.pdf 500k.eps>
-(epstopdf)             \includegraphics on input line 136.
-Package epstopdf Info: Output file is already uptodate.
-<500k-eps-converted-to.pdf, id=53, 1218.47224pt x 567.31952pt>
-File: 500k-eps-converted-to.pdf Graphic file (type pdf)
-<use 500k-eps-converted-to.pdf>
-Package pdftex.def Info: 500k-eps-converted-to.pdf  used on input line 136.
-(pdftex.def)             Requested size: 317.87689pt x 148.00168pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-Package epstopdf Info: Source file: <1000k.eps>
-(epstopdf)                    date: 2021-05-18 04:41:25
-(epstopdf)                    size: 66720 bytes
-(epstopdf)             Output file: <1000k-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-05-18 04:41:45
-(epstopdf)                    size: 15445 bytes
-(epstopdf)             Command: <repstopdf --outfile=1000k-eps-converted-to.pdf 1000k.eps>
-(epstopdf)             \includegraphics on input line 143.
-Package epstopdf Info: Output file is already uptodate.
-<1000k-eps-converted-to.pdf, id=54, 1073.93225pt x 558.6471pt>
-File: 1000k-eps-converted-to.pdf Graphic file (type pdf)
-<use 1000k-eps-converted-to.pdf>
-Package pdftex.def Info: 1000k-eps-converted-to.pdf  used on input line 143.
-(pdftex.def)             Requested size: 317.87689pt x 165.35353pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 151.
-[2 </home/kbs/reinforcement_learning/Ex4/latex/500k_eps.png> </home/kbs/reinforcement_learning/Ex4/latex/0k-eps-converted-to.pdf> </home/kbs/reinforcement_learning/Ex4/latex/100k.png>] [3 </home/kbs/reinforcement_learning/Ex4/latex/200k-eps-converted-to.pdf> </home/kbs/reinforcement_learning/Ex4/latex/300k-eps-converted-to.pdf> </home/kbs/reinforcement_learning/Ex4/latex/400k-eps-converted-to.pdf> </home/kbs/reinforcement_learning/Ex4/latex/500k-eps-converted-to.pdf>] [4 </home/kbs/reinforcement_learning/Ex4/latex/1000k-eps-converted-to.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 151.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 137.
+[2 </home/kbs/reinforcement_learning/Ex4/latex/500k_eps.png> </home/kbs/reinforcement_learning/Ex4/latex/es-v3-0k-eps-converted-to.pdf> </home/kbs/reinforcement_learning/Ex4/latex/es-v3-100k-eps-converted-to.pdf>] [3 </home/kbs/reinforcement_learning/Ex4/latex/es-v3-200k-eps-converted-to.pdf> </home/kbs/reinforcement_learning/Ex4/latex/es-v3-500k-eps-converted-to.pdf> </home/kbs/reinforcement_learning/Ex4/latex/es-v3-1000k-eps-converted-to.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 137.
  (/home/kbs/reinforcement_learning/Ex4/latex/e04.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 151.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 137.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 137.
 Package rerunfilecheck Info: File `e04.out' has not changed.
 (rerunfilecheck)             Checksum: C0796886C4A43DACE59D2CCB9DB71AF9;466.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 137.
  ) 
 Here is how much of TeX's memory you used:
- 11430 strings out of 483057
- 178266 string characters out of 5962301
- 481138 words of memory out of 5000000
- 26189 multiletter control sequences out of 15000+600000
+ 11413 strings out of 483057
+ 178170 string characters out of 5962301
+ 479947 words of memory out of 5000000
+ 26177 multiletter control sequences out of 15000+600000
  568265 words of font info for 89 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  41i,6n,42p,370b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on /home/kbs/reinforcement_learning/Ex4/latex/e04.pdf (4 pages, 895088 bytes).
+Output written on /home/kbs/reinforcement_learning/Ex4/latex/e04.pdf (3 pages, 875483 bytes).
 PDF statistics:
- 273 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
- 23662 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 241 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
+ 19 named destinations out of 1000 (max. 500000)
+ 23652 words of extra memory for PDF output out of 24883 (max. 10000000)
 

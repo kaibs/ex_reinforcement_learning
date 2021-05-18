@@ -63,7 +63,8 @@ The most common examples are games like blackjack or backgammon where it is clos
 determine the value of the current state. Therefore DP isn't a viable option, but MC is.\\
 A more exotic example environment might be the simulation of illumnation/reflection behaviours. Approximating the
 path of the light with MC is an efficient way to solve this problem because we don't have to solve
-the infinity number of possible situations (angle, reflectivity, intensity, etc).
+the infinity number of possible situations (angle, reflectivity, intensity, etc) or create an complex
+simulation model of the system.
 
 
 \section{}
@@ -98,54 +99,39 @@ For all plots:
 
 
 \begin{figure}[h!]
-  \includegraphics[width=.7\textwidth]{0k.eps}
+  \includegraphics[width=.7\textwidth]{es-v3-0k.eps}
   \centering
   \caption{plots ES MC with 0k episodes (usable ace left, unusable right)}
   \label{fig3}
 \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=.7\textwidth]{100k.png}
+  \includegraphics[width=.7\textwidth]{es-v3-100k.eps}
   \centering
   \caption{plots ES MC with 100k episodes (usable ace left, unusable right)}
   \label{fig4}
 \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=.7\textwidth]{200k.eps}
+  \includegraphics[width=.7\textwidth]{es-v3-200k.eps}
   \centering
   \caption{plots ES MC with 200k episodes (usable ace left, unusable right)}
   \label{fig5}
 \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=.7\textwidth]{300k.eps}
+  \includegraphics[width=.7\textwidth]{es-v3-500k.eps}
   \centering
   \caption{plots ES MC with 300k episodes (usable ace left, unusable right)}
   \label{fig6}
 \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=.7\textwidth]{400k.eps}
+  \includegraphics[width=.7\textwidth]{es-v3-1000k.eps}
   \centering
   \caption{plots ES MC with 400k episodes (usable ace left, unusable right)}
   \label{fig7}
 \end{figure}
-
-\begin{figure}[h!]
-  \includegraphics[width=.7\textwidth]{500k.eps}
-  \centering
-  \caption{plots ES MC with 500k episodes (usable ace left, unusable right)}
-  \label{fig8}
-\end{figure}
-
-\begin{figure}[h!]
-  \includegraphics[width=.7\textwidth]{1000k.eps}
-  \centering
-  \caption{plots ES MC with 1000k episodes (usable ace left, unusable right)}
-  \label{fig9}
-\end{figure}
-
 
 
 \end{document}
