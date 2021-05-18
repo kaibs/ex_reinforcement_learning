@@ -45,6 +45,106 @@
 
 \maketitle
 
+\section{}
+
+\subsection{Advantages MC vs DP}
+
+\begin{itemize}
+    \item MC only considers values from one episode for it's updates, not from all previous backups\\
+    Although this might increase variance, it drastically improves computation time
+    \item For DP we need the transition matrix/distribution, which might be unrealistic for real 
+    scenarios.\\
+    For MC we try to obtain our information by interacting with the environment. 
+\end{itemize}
+
+\subsection{Example environment}
+MC methods are only suitable for repetitve scenarios, because we only update after an episode has ended.\\
+The most common examples are games like blackjack or backgammon where it is close to impossible to 
+determine the value of the current state. Therefore DP isn't a viable option, but MC is.\\
+A more exotic example environment might be the simulation of illumnation/reflection behaviours. Approximating the
+path of the light with MC is an efficient way to solve this problem because we don't have to solve
+the infinity number of possible situations (angle, reflectivity, intensity, etc).
+
+
+\section{}
+
+\subsection{first visit MC}
+
+\subsubsection{10k episodes}
+
+\begin{figure}[h!]
+  \includegraphics[width=.7\textwidth]{10k_eps.png}
+  \centering
+  \caption{plots first-visit MC with 10k episodes (usable ace left, unusable right)}
+  \label{fig1}
+\end{figure}
+
+\subsubsection{500k episodes}
+
+\begin{figure}[h!]
+  \includegraphics[width=.7\textwidth]{500k_eps.png}
+  \centering
+  \caption{plots first-visit MC with 500k episodes (usable ace left, unusable right)}
+  \label{fig2}
+\end{figure}
+
+\subsection{ES MC}
+
+For all plots:
+\begin{itemize}
+  \item \textbf{Yellow:} 1.0 - hit
+  \item \textbf{Purple:} 0.0 - stick
+\end{itemize}
+
+
+\begin{figure}[h!]
+  \includegraphics[width=.7\textwidth]{0k.eps}
+  \centering
+  \caption{plots ES MC with 0k episodes (usable ace left, unusable right)}
+  \label{fig3}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=.7\textwidth]{100k.png}
+  \centering
+  \caption{plots ES MC with 100k episodes (usable ace left, unusable right)}
+  \label{fig4}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=.7\textwidth]{200k.eps}
+  \centering
+  \caption{plots ES MC with 200k episodes (usable ace left, unusable right)}
+  \label{fig5}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=.7\textwidth]{300k.eps}
+  \centering
+  \caption{plots ES MC with 300k episodes (usable ace left, unusable right)}
+  \label{fig6}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=.7\textwidth]{400k.eps}
+  \centering
+  \caption{plots ES MC with 400k episodes (usable ace left, unusable right)}
+  \label{fig7}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=.7\textwidth]{500k.eps}
+  \centering
+  \caption{plots ES MC with 500k episodes (usable ace left, unusable right)}
+  \label{fig8}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=.7\textwidth]{1000k.eps}
+  \centering
+  \caption{plots ES MC with 1000k episodes (usable ace left, unusable right)}
+  \label{fig9}
+\end{figure}
 
 
 
