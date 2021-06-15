@@ -63,9 +63,31 @@ approximation with the $dim(w)=|S|$.
 Sarsa: $Q(S_t,A_t) \leftarrow Q(S_t,A_t) + \alpha \delta_{t}$ with  
 $\delta_{t}=[R_{t+1}+\gamma Q(S_{t+1},A_{t+1})-Q(S_t,A_t)]$
 
-%\subsubsection{tabular}
-%
-%$V(S_t) \leftarrow $
+\subsubsection{tabular}
+
+For the tabular case we can directly use the formula given in the slides (v05s15):
+\vspace{10pt}
+\flushleft
+$Q(S_t,A_t) \leftarrow Q(S_t,A_t) + \alpha [R_{t+1}+\gamma Q(S_{t+1},A_{t+1})-Q(S_t,A_t)]$
+
+\subsubsection{function approximation}
+
+For state-action values we have the following update rule for weights in control:
+\vspace{10pt}
+\flushleft
+$w_{t+1} \leftarrow w_{t} + \alpha [U_{t} - \hat{q}(S_t,A_t,w)]\nabla\hat{q}(S_t,A_t,w)$\\
+with $U_t = R_{t+1}+\gamma \hat{q} (S_{t+1},A_{t+1},w)$ for one-step SARSA\\
+\vspace{10pt}
+plugged in we get: $w_{t+1} \leftarrow w_{t} + \alpha [R_{t+1}+\gamma \hat{q} (S_{t+1},A_{t+1},w) - \hat{q}(S_t,A_t,w)]\nabla\hat{q}(S_t,A_t,w)$
+
+\subsubsection{linear function approximation}
+
+With the value function beeing $\hat{v}(s,w)=w^T x(s)$ for the linear case and the update formula
+for the linear TD $w \leftarrow w + \alpha [R_{t+1}+\gamma w^T x(S_{t+1}) - w^T x(S_t)]x(S_t)$ we can get:\\
+\vspace{10pt}
+\flushleft
+$w_{t+1} \leftarrow w_{t} + \alpha [R_{t+1}+\gamma w^T x(S_{t+1},A_{t+1}) - w^T x(S_t,A_t)]x(S_t,A_t)$
+
 
 
 
