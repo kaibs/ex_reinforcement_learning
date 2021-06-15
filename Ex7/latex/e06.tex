@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
+\usepackage{calc} % To reset the counter in the document after title page
+\usepackage{enumitem} % Includes lists
+\usepackage{caption}
+\captionsetup[figure]{font=small,labelfont=small,labelfont=bf}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{fancyvrb,newverbs,xcolor}
+\usepackage{verbatim}
+\definecolor{cverbbg}{gray}{0.93}
+
+\newenvironment{lcverbatim}
+ {\SaveVerbatim{cverb}}
+ {\endSaveVerbatim
+  \flushleft\fboxrule=0pt\fboxsep=.5em
+  \colorbox{cverbbg}{%
+    \makebox[\dimexpr\linewidth-2\fboxsep][l]{\BUseVerbatim{cverb}}%
+  }
+  \endflushleft
+}
+
+\renewcommand\thesection{Task \arabic{section}}
+\renewcommand\thesubsection{\alph{subsection}.)}
+\renewcommand\thesubsubsection{\Roman{subsubsection}:}
+
+\frenchspacing
+\linespread{1.2}
+\usepackage[a4paper, lmargin=0.12\paperwidth, rmargin=0.12\paperwidth, tmargin=0.05\paperheight, bmargin=0.1\paperheight]{geometry}
+
+\usepackage[all]{nowidow} % Tries to remove widows
+\usepackage[protrusion=true,expansion=true]{microtype}
+
+\title{Exercise 7}
+\author{Kai Schneider}
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\section{Linear function approximation}
+
+\subsection{}
+
+With linear function approximation we have a value function with the following form:\\
+$ \hat{\upsilon}(s,w)=w^{T}x(s)=\sum_{i=1}^{d}w_{i}x_{i}(s)$\\
+For tabular methods we can write all $x_{i}(s)$ as 
+$x_{i}(s)=[0 \dots \underbrace{v(s)}_{\text{i-th entry}}\dots 0]^T$\\\\
+This way our value function can be written the same as for the linear function 
+approximating with the weight vector $w = [1 \dots 1]$.\\
+This way the tabular version is only a special case of the linear function 
+approximation with the $dim(w)=|S|$.
+
+\subsection{}
+
+Sarsa: $Q(S_t,A_t) \leftarrow Q(S_t,A_t) + \alpha \delta_{t}$ with  
+$\delta_{t}=[R_{t+1}+\gamma Q(S_{t+1},A_{t+1})-Q(S_t,A_t)]$
+
+%\subsubsection{tabular}
+%
+%$V(S_t) \leftarrow $
+
+
+
+
+
+
+\end{document}
+
