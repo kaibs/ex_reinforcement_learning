@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1623172505 "/home/kbs/reinforcement_learning/Ex6/latex/e06.tex" "/home/kbs/reinforcement_learning/Ex6/latex/e06.pdf" "e06" 1623172506
+["pdflatex"] 1624335838 "/home/kbs/reinforcement_learning/Ex6/latex/e06.tex" "/home/kbs/reinforcement_learning/Ex6/latex/e06.pdf" "e06" 1624335838
   "/etc/texmf/web2c/texmf.cnf" 1615468788 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kbs/reinforcement_learning/Ex6/latex/e06.aux" 1623172506 1913 4148aaff50df26c14d70017f4ba584f9 ""
-  "/home/kbs/reinforcement_learning/Ex6/latex/e06.tex" 1623172505 3161 778a0aef402bfad4e980aea756c99dbe ""
+  "/home/kbs/reinforcement_learning/Ex6/latex/e06.aux" 1624335838 1913 f6650d7bff6a4d9d0674d0f3fac39c0a ""
+  "/home/kbs/reinforcement_learning/Ex6/latex/e06.tex" 1624335837 3171 e36940f3200c0e6dec213bd984047845 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -121,15 +121,15 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1615473702 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1615473708 5797034 32770257fec0df77d7b9329befbe1f0e ""
-  "e06.aux" 1623172506 1913 4148aaff50df26c14d70017f4ba584f9 "pdflatex"
-  "e06.out" 1623172506 287 15920289bb8b6bb09ac0fccc9c3a7c90 "pdflatex"
-  "e06.tex" 1623172505 3161 778a0aef402bfad4e980aea756c99dbe ""
+  "e06.aux" 1624335838 1913 f6650d7bff6a4d9d0674d0f3fac39c0a "pdflatex"
+  "e06.out" 1624335838 287 15920289bb8b6bb09ac0fccc9c3a7c90 "pdflatex"
+  "e06.tex" 1624335837 3171 e36940f3200c0e6dec213bd984047845 ""
   "path_length.eps" 1623172140 17525 1f4b0c1af309d1b900fd2691a1ed03a6 ""
   "reward.eps" 1623172297 15629 60dfb18c09c07c0905ea12858d4bcbce ""
   (generated)
   "e06.aux"
-  "/home/kbs/reinforcement_learning/Ex6/latex/e06.pdf"
+  "e06.pdf"
   "e06.log"
+  "/home/kbs/reinforcement_learning/Ex6/latex/e06.pdf"
   "/home/kbs/reinforcement_learning/Ex6/latex/e06.log"
   "e06.out"
-  "e06.pdf"
