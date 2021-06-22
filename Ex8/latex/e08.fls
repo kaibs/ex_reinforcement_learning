@@ -300,8 +300,9 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /home/kbs/reinforcement_learning/Ex8/latex/plots_v2.eps
 INPUT /home/kbs/reinforcement_learning/Ex8/latex/plots_v2.eps
 INPUT /home/kbs/reinforcement_learning/Ex8/latex/plots_v2.eps
-INPUT /home/kbs/reinforcement_learning/Ex8/latex/plots_v2.eps
 INPUT /home/kbs/reinforcement_learning/Ex8/latex/plots_v2-eps-converted-to.pdf
+INPUT /home/kbs/reinforcement_learning/Ex8/latex/plots_v2-eps-converted-to.pdf
+INPUT /home/kbs/reinforcement_learning/Ex8/latex/plots_v2.eps
 INPUT /home/kbs/reinforcement_learning/Ex8/latex/plots_v2-eps-converted-to.pdf
 INPUT /home/kbs/reinforcement_learning/Ex8/latex/plots_v2-eps-converted-to.pdf
 INPUT /home/kbs/reinforcement_learning/Ex8/latex/plots_v2-eps-converted-to.pdf

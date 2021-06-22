@@ -2,6 +2,7 @@ import gym
 import numpy as np
 import matplotlib.pyplot as plt
 import random
+from reference import value_iteration
 
 
 
@@ -34,14 +35,14 @@ def get_pol(env, Q, s, epsilon):
 
 
 
-def nstep_sarsa(env, n=1, alpha=0.1, gamma=0.9, epsilon=0.1, num_ep=int(1e4)):
+def nstep_sarsa(env, n=1, alpha=0.1, gamma=0.9, epsilon=0.3, num_ep=int(1e4)):
     """ TODO: implement the n-step sarsa algorithm """
 
     # init params
     nbr_a = env.action_space.n
     nbr_s = env.observation_space.n
     #Q = np.zeros((nbr_s,  nbr_a))
-    Q = np.ones((nbr_s,  nbr_a))*0.2
+    Q = np.ones((nbr_s,  nbr_a))*0.1
 
     # go over episodes
     for i in range(num_ep):
@@ -80,18 +81,21 @@ def nstep_sarsa(env, n=1, alpha=0.1, gamma=0.9, epsilon=0.1, num_ep=int(1e4)):
 
             if tau >= 0:
 
-                G_idx = np.array([gamma ** (i - tau - 1) for i in range((tau + 1), min(tau + n, T) + 1)])
+                G_idx = np.array([gamma ** (j - tau - 1) for j in range((tau + 1), min(tau + n, T) + 1)])
                 G = np.sum(G_idx*rew[(tau + 1):(min(tau + n, T) + 1)])
 
                 if tau + n < T:
                     G += (gamma**n)*Q[S[tau + n]][A[tau + n]]
 
-                Q[S[tau]][A[tau]] += alpha * (G - Q[S[tau]][A[tau]])
+                Q[S[tau], A[tau]] += alpha * (G - Q[S[tau], A[tau]])
 
             t += 1
 
 
-    return Q
+    V = np.array([np.max(Q[i][:]) for i in range(np.shape(Q)[0])])
+
+
+    return Q, V
 
 
         
@@ -101,21 +105,24 @@ if __name__ == "__main__":
     env=gym.make('FrozenLake-v0', map_name="8x8")
 
     # params
-    num_ep = 10000
-    n_arr = [1, 2, 4, 8, 16, 64, 128]
-    #n_arr = [1, 6]
+    num_ep = 100000
+    n_arr = [1, 2, 4, 8, 16, 64, 128, 512]
+    #n_arr = [1, 128, 512]
     #alpha_arr = [0.1, 0.2, 0.4, 0.6, 0.8, 1]
-    alpha_arr = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+    alpha_arr = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
     results = [[] for n in range(len(n_arr))]
+
+    # get reference with value iteration
+    _, V_ref = value_iteration(env)
 
     # loop over params
     for i in range(len(n_arr)):
         for a in alpha_arr:
             print("running n=" + str(n_arr[i]) + "  and  alpha=" + str(a))
             #Q, Q_ref = nstep_sarsa(env, n=n_arr[i], alpha=a, num_ep=num_ep)
-            Q= nstep_sarsa(env, n=n_arr[i], alpha=a, num_ep=num_ep)
-            Q_ref = nstep_sarsa(env, n=n_arr[i], alpha=a, num_ep=10)
-            results[i].append(np.linalg.norm(Q - Q_ref))
+            Q, V = nstep_sarsa(env, n=n_arr[i], alpha=a, num_ep=num_ep)
+            #Q_ref = nstep_sarsa(env, n=n_arr[i], alpha=a, num_ep=10)
+            results[i].append(np.linalg.norm(V - V_ref)**2)
 
     # plot results
     plt.rc('legend', fontsize=16)
@@ -125,6 +132,6 @@ if __name__ == "__main__":
     for i in range(len(n_arr)):
         plt.plot(alpha_arr, results[i], label=n_arr[i], linewidth=2.0)
     plt.legend()
-    plt.xlabel("alpha")
-    plt.ylabel("error")
+    plt.xlabel("alpha", fontsize=18)
+    plt.ylabel("error", fontsize=18)
     plt.show()

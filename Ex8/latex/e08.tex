@@ -61,6 +61,11 @@ Which algorithm performs better depends on the number of steps in the first epis
         goal. n-bootstrapping wouldn't be able to do this, so Dyna-Q would clearly perform better in this case. 
 \end{itemize}
 
+\flushleft
+The ability to revisited all already visited states allows Dyna-Q to gain more information.
+However the performance depends on the chosen environment. If the sorrounding isn't static, Dyna-Q should might 
+have more issuses compared to n-step bootstrapping.
+
 \newpage
 
 \subsection{}
@@ -72,7 +77,7 @@ Given:
     G_{t:t+n} = R_{t+1} + \gamma R_{t+2} + \dots + \gamma^{n-1} R_{t+n} + \gamma^{n} V(S_{t+n})
 \end{align}
 
-Plug $(2)$ ind $(1)$:
+Plug $(2)$ in $(1)$:
 
 \begin{align*}
   G_{t}^{\lambda} &= (1-\lambda) \sum_{n=1}^{\infty} \lambda^{n-1} \bigl( 
@@ -96,7 +101,7 @@ Plug $(2)$ ind $(1)$:
   \includegraphics[width=.75\textwidth]{plots_v1.eps}
   \centering
   \caption{plot of n-sarsa performance}
-  \label{fig2}
+  \label{fig1}
 \end{figure}
 
 \newpage
