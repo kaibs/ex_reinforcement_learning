@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1624933265 "/home/kbs/reinforcement_learning/Ex9/latex/e09.tex" "/home/kbs/reinforcement_learning/Ex9/latex/e09.pdf" "e09" 1624933299
+["pdflatex"] 1624969614 "/home/kbs/ex_reinforcement_learning/Ex9/latex/e09.tex" "/home/kbs/ex_reinforcement_learning/Ex9/latex/e09.pdf" "e09" 1624969630
   "/etc/texmf/web2c/texmf.cnf" 1615468788 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kbs/reinforcement_learning/Ex9/latex/e09.aux" 1624933265 1004 8df576204ce23773b82d7052de916fb5 ""
-  "/home/kbs/reinforcement_learning/Ex9/latex/e09.tex" 1624933299 4790 94957fb6d2659e8503c1295afc604856 ""
+  "/home/kbs/ex_reinforcement_learning/Ex9/latex/e09.aux" 1624969614 1004 8df576204ce23773b82d7052de916fb5 ""
+  "/home/kbs/ex_reinforcement_learning/Ex9/latex/e09.tex" 1624969630 5320 57ceae56dc71a2650615db1a6262ba34 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -123,13 +123,13 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1615473702 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1615473708 5797034 32770257fec0df77d7b9329befbe1f0e ""
-  "e09.aux" 1624933265 1004 8df576204ce23773b82d7052de916fb5 "pdflatex"
-  "e09.out" 1624933265 159 0f42c51241aced6f28997e640d9c8e7b "pdflatex"
-  "e09.tex" 1624933299 4790 94957fb6d2659e8503c1295afc604856 ""
+  "e09.aux" 1624969614 1004 8df576204ce23773b82d7052de916fb5 "pdflatex"
+  "e09.out" 1624969614 159 0f42c51241aced6f28997e640d9c8e7b "pdflatex"
+  "e09.tex" 1624969630 5320 57ceae56dc71a2650615db1a6262ba34 ""
   (generated)
   "e09.pdf"
-  "e09.out"
+  "/home/kbs/ex_reinforcement_learning/Ex9/latex/e09.log"
   "e09.log"
-  "/home/kbs/reinforcement_learning/Ex9/latex/e09.log"
+  "/home/kbs/ex_reinforcement_learning/Ex9/latex/e09.pdf"
+  "e09.out"
   "e09.aux"
-  "/home/kbs/reinforcement_learning/Ex9/latex/e09.pdf"

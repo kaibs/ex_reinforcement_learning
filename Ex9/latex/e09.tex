@@ -103,8 +103,10 @@ and vice versa
 With $\sigma'(z) = \sigma(z) \bigl( 1 - \sigma(z) \bigr)$ being the derivative of the sigma function we get: \\
 
 \begin{align*}
-  \nabla_{\theta} \pi(a=0|s,\theta) &= \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigl( 1 -  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigr)s \\
-  \nabla_{\theta} \pi(a=1|s,\theta) &= \sigma(s^{T}(\theta_{1} - \theta_{0})) \bigl( 1 -  \sigma(s^{T}(\theta_{1} - \theta_{0})) \bigr)s
+  \nabla_{\theta_{0}} \pi(a=0|s,\theta) &= \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigl( 1 -  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigr)s \\
+  \nabla_{\theta_{1}} \pi(a=0|s,\theta) &= -\sigma(s^{T}(\theta_{0} - \theta_{1})) \bigl( 1 -  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigr)s \\
+  \nabla_{\theta_{1}} \pi(a=1|s,\theta) &= \sigma(s^{T}(\theta_{1} - \theta_{0})) \bigl( 1 -  \sigma(s^{T}(\theta_{1} - \theta_{0})) \bigr)s \\
+  \nabla_{\theta_{0}} \pi(a=1|s,\theta) &= -\sigma(s^{T}(\theta_{1} - \theta_{0})) \bigl( 1 -  \sigma(s^{T}(\theta_{1} - \theta_{0})) \bigr)s
 \end{align*}
 
 
@@ -114,17 +116,19 @@ The derivate $\nabla_{\theta} \log \pi(a=0|s,\theta)$ can be calculated in a sim
 
 
 \begin{align*}
-  \nabla_{\theta} \log \pi(a=0|s,\theta) &= \frac{1}{\pi(a=0|s,\theta)} 
+  \nabla_{\theta_{0}} \log \pi(a=0|s,\theta) &= \frac{1}{\pi(a=0|s,\theta)} 
                   \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigl( 1 -  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigr)s \\
   &= \frac{1}{\sigma(s^{T}(\theta_{0} - \theta_{1}))} 
   \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigl( 1 -  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigr)s \\
   &= \bigl( 1 -  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigr)s \\
+  \nabla_{\theta_{1}} \log \pi(a=0|s,\theta) &= \bigl( 1 -  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigr)(-s)
 \end{align*}
 
 and 
 
 \begin{align*}
-  \nabla_{\theta} \log \pi(a=1|s,\theta) &=  \bigl( 1 -  \sigma(s^{T}(\theta_{1} - \theta_{0})) \bigr)s \\
+  \nabla_{\theta_{1}} \log \pi(a=1|s,\theta) &=  \bigl( 1 -  \sigma(s^{T}(\theta_{1} - \theta_{0})) \bigr)s \\
+  \nabla_{\theta_{0}} \log \pi(a=1|s,\theta) &=  \bigl( 1 -  \sigma(s^{T}(\theta_{1} - \theta_{0})) \bigr)(-s) \\
 \end{align*}
 
 This can again be rewritten with the results from \textbf{a.)}:
