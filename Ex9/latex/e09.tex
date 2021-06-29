@@ -1,0 +1,163 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{graphicx}
+\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
+\usepackage{calc} % To reset the counter in the document after title page
+\usepackage{enumitem} % Includes lists
+\usepackage{caption}
+\captionsetup[figure]{font=small,labelfont=small,labelfont=bf}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{fancyvrb,newverbs,xcolor}
+\usepackage{verbatim}
+\definecolor{cverbbg}{gray}{0.93}
+
+\newenvironment{lcverbatim}
+ {\SaveVerbatim{cverb}}
+ {\endSaveVerbatim
+  \flushleft\fboxrule=0pt\fboxsep=.5em
+  \colorbox{cverbbg}{%
+    \makebox[\dimexpr\linewidth-2\fboxsep][l]{\BUseVerbatim{cverb}}%
+  }
+  \endflushleft
+}
+
+\renewcommand\thesection{Task \arabic{section}}
+\renewcommand\thesubsection{\alph{subsection}.)}
+\renewcommand\thesubsubsection{\Roman{subsubsection}:}
+
+\frenchspacing
+\linespread{1.2}
+\usepackage[a4paper, lmargin=0.12\paperwidth, rmargin=0.12\paperwidth, tmargin=0.05\paperheight, bmargin=0.1\paperheight]{geometry}
+
+\usepackage[all]{nowidow} % Tries to remove widows
+\usepackage[protrusion=true,expansion=true]{microtype}
+
+\title{Exercise 9}
+\author{Kai Schneider}
+\date{\today}
+
+\begin{document} 
+
+\maketitle
+
+\section{Reinforce on the Cart-Pole}
+
+\subsection{}
+
+softmax: $\;\; \pi(a|s,\theta) = \frac{e^{h(s,a,\theta)}}{\sum_{b}e^{h(s,a,\theta)}}$ \\
+
+\flushleft
+linear features: $\;\; h(s,a,\theta) = \theta_{a}^{T}s$ \\
+
+\vspace{10pt}
+
+for the 2 actions space $a\in\{0, 1\}$ of the cart pole this results in  
+$\;\; \pi(a|s,\theta) = \frac{e^{\theta_{a}^{T}s}}{e^{\theta_{0}^{T}s} + e^{\theta_{1}^{T}s}} \;\;$ for the softmax function.
+With state $s=(p, \dot{p}, \alpha, \dot{\alpha})^{T}\in\mathbb{R}^4$ follows $\theta\in\mathbb{R}^4$ \\
+
+This results for the given actions in: 
+
+\vspace{5pt}
+
+\begin{center}
+$\pi(a=0|s,\theta) = \frac{e^{\theta_{0}^{T}s}}{e^{\theta_{0}^{T}s} + e^{\theta_{1}^{T}s}} \;\;$ and 
+$\;\; \pi(a=1|s,\theta) = \frac{e^{\theta_{1}^{T}s}}{e^{\theta_{0}^{T}s} + e^{\theta_{1}^{T}s}}$
+\end{center}
+
+\vspace{5pt}
+
+These can be rewritten as a sigmoid function:
+
+\begin{align*}
+\pi(a=0|s,\theta) &= \frac{e^{\theta_{0}^{T}s}} {e^{\theta_{0}^{T}s} + e^{\theta_{1}^{T}s}} \\
+                  &= \frac{e^{\theta_{0}^{T}s}} {e^{\theta_{0}^{T}s} \bigl( e^{\theta_{1}^{T}s - \theta_{0}^{T}s} + 1 \bigr)} \\
+                  &=  \frac{1} {e^{\theta_{1}^{T}s - \theta_{0}^{T}s} + 1} \\
+                  &=  \sigma(\theta_{0}^{T}s - \theta_{1}^{T}s) \\
+                  &=  \sigma(s^{T}(\theta_{0} - \theta_{1}))
+\end{align*}
+
+similar for $\;\; \pi(a=1|s,\theta) =  \sigma(s^{T}(\theta_{1} - \theta_{0}))$
+
+\vspace{5pt}
+
+Also due to $\sigma(z) = \frac{1}{1+e^{-z}} = \frac{e^{z}}{1+e^{z}}$ we have
+
+\begin{align*}
+  \pi(a=0|s,\theta) &= 1 - \pi(a=1|s,\theta) \\
+                    &= 1 - \sigma(s^{T}(\theta_{1} - \theta_{0}))
+\end{align*}
+  
+and vice versa
+
+\begin{center}
+  $\pi(a=1|s,\theta) = 1 - \sigma(s^{T}(\theta_{0} - \theta_{1}))$
+\end{center}
+
+\vspace{5pt}
+
+With $\sigma'(z) = \sigma(z) \bigl( 1 - \sigma(z) \bigr)$ being the derivative of the sigma function we get: \\
+
+\begin{align*}
+  \nabla_{\theta} \pi(a=0|s,\theta) &= \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigl( 1 -  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigr)s \\
+  \nabla_{\theta} \pi(a=1|s,\theta) &= \sigma(s^{T}(\theta_{1} - \theta_{0})) \bigl( 1 -  \sigma(s^{T}(\theta_{1} - \theta_{0})) \bigr)s
+\end{align*}
+
+
+\subsection{}
+
+The derivate $\nabla_{\theta} \log \pi(a=0|s,\theta)$ can be calculated in a similar fashion:
+
+
+\begin{align*}
+  \nabla_{\theta} \log \pi(a=0|s,\theta) &= \frac{1}{\pi(a=0|s,\theta)} 
+                  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigl( 1 -  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigr)s \\
+  &= \frac{1}{\sigma(s^{T}(\theta_{0} - \theta_{1}))} 
+  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigl( 1 -  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigr)s \\
+  &= \bigl( 1 -  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigr)s \\
+\end{align*}
+
+and 
+
+\begin{align*}
+  \nabla_{\theta} \log \pi(a=1|s,\theta) &=  \bigl( 1 -  \sigma(s^{T}(\theta_{1} - \theta_{0})) \bigr)s \\
+\end{align*}
+
+This can again be rewritten with the results from \textbf{a.)}:
+
+
+\begin{align*}
+  \nabla_{\theta} \log \pi(a=0|s,\theta) &=  \bigl( 1 -  \sigma(s^{T}(\theta_{0} - \theta_{1})) \bigr)s \\
+                                         &= \sigma(s^{T}(\theta_{1} - \theta_{0}))s \\
+\end{align*}
+
+and
+
+\begin{align*}
+  \nabla_{\theta} \log \pi(a=1|s,\theta) &=  \bigl( 1 -  \sigma(s^{T}(\theta_{1} - \theta_{0})) \bigr)s \\
+                                         &= \sigma(s^{T}(\theta_{0} - \theta_{1}))s \\
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
