@@ -50,8 +50,14 @@
 \subsection{}
 
 \begin{itemize}
-  \item nonlinearity -> act fcn
-  \item q fcn increases indefinitely -> $\gamma << 1$, avg over R
+  \item NNs tend to diverge (due to high correlation states and actions, NOT i.i.d) \\ $\rightarrow$
+        Experience Replay (sampling training data from buffer of past experiences)
+  \item oscillation due to big changes in Q-values \\ $\rightarrow$
+        much lower learning rate than in other DL-scenarios
+  \item bias introduced at beginning of training and instability due to similar subsequend steps \\ $\rightarrow$ 
+        DDQN (2 NNs) predictions of target NN are used to backpropagate training NN.
+        target network is only synced periodically
+  \item (nonlinearity -> act fcn)
 \end{itemize}
 
 
