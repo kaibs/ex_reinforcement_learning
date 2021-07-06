@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1625432614 "/home/kbs/ex_reinforcement_learning/Ex10/latex/e10.tex" "/home/kbs/ex_reinforcement_learning/Ex10/latex/e10.pdf" "e10" 1625432615
+["pdflatex"] 1625552325 "/home/kbs/ex_reinforcement_learning/Ex10/latex/e10.tex" "/home/kbs/ex_reinforcement_learning/Ex10/latex/e10.pdf" "e10" 1625552325
   "/etc/texmf/web2c/texmf.cnf" 1615468788 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kbs/ex_reinforcement_learning/Ex10/latex/e10.aux" 1625432614 891 90cdac764aa3e36de611f24bc4c37b0e ""
-  "/home/kbs/ex_reinforcement_learning/Ex10/latex/e10.tex" 1625432614 2037 fded7e350c339e68c4fbdb98abbf112d ""
+  "/home/kbs/ex_reinforcement_learning/Ex10/latex/e10.aux" 1625552325 891 90cdac764aa3e36de611f24bc4c37b0e ""
+  "/home/kbs/ex_reinforcement_learning/Ex10/latex/e10.tex" 1625552325 2003 113e05863a7cddbc37f1df07d73bf21d ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -113,13 +113,13 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1615473702 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1615473708 5797034 32770257fec0df77d7b9329befbe1f0e ""
-  "e10.aux" 1625432614 891 90cdac764aa3e36de611f24bc4c37b0e "pdflatex"
-  "e10.out" 1625432614 104 d706764514ba99c2b38918b7495afa76 "pdflatex"
-  "e10.tex" 1625432614 2037 fded7e350c339e68c4fbdb98abbf112d ""
+  "e10.aux" 1625552325 891 90cdac764aa3e36de611f24bc4c37b0e "pdflatex"
+  "e10.out" 1625552325 104 d706764514ba99c2b38918b7495afa76 "pdflatex"
+  "e10.tex" 1625552325 2003 113e05863a7cddbc37f1df07d73bf21d ""
   (generated)
-  "e10.out"
-  "/home/kbs/ex_reinforcement_learning/Ex10/latex/e10.log"
   "/home/kbs/ex_reinforcement_learning/Ex10/latex/e10.pdf"
-  "e10.pdf"
-  "e10.log"
   "e10.aux"
+  "/home/kbs/ex_reinforcement_learning/Ex10/latex/e10.log"
+  "e10.log"
+  "e10.pdf"
+  "e10.out"
