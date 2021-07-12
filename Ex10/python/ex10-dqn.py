@@ -39,7 +39,7 @@ class DDQN:
         self.epsilon = 0.1
 
         # experience buffer
-        self.buffersize = 50
+        self.buffersize = 500
         self.buffer = []
         self.batch_size = 6
 
@@ -77,7 +77,7 @@ class DDQN:
 
     def Q_function(self, states, actions):
         """ This is the q-function approximated by the model, given state and action it outputs the value """
-        return tf.reduce_sum(self.model_target(states) * tf.one_hot(actions, self.num_actions), axis=-1)
+        return tf.reduce_sum(self.model(states) * tf.one_hot(actions, self.num_actions), axis=-1)
 
     @tf.function
     def gradient_step(self, states, action, value_target):

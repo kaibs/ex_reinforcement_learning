@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.11)  6 JUL 2021 08:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.11)  6 JUL 2021 14:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -526,31 +526,31 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 Package caption Warning: Unused \captionsetup[figure] on input line 10.
 See the caption package documentation for explanation.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 66.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 67.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 67.
  (/home/kbs/ex_reinforcement_learning/Ex10/latex/e10.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 66.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 67.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 67.
 Package rerunfilecheck Info: File `e10.out' has not changed.
 (rerunfilecheck)             Checksum: D706764514BA99C2B38918B7495AFA76;104.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 67.
  ) 
 Here is how much of TeX's memory you used:
- 11374 strings out of 483057
+ 11375 strings out of 483057
  177451 string characters out of 5962301
  477268 words of memory out of 5000000
  26170 multiletter control sequences out of 15000+600000
- 569757 words of font info for 105 fonts, out of 8000000 for 9000
+ 571557 words of font info for 107 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  41i,6n,42p,374b,324s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on /home/kbs/ex_reinforcement_learning/Ex10/latex/e10.pdf (1 page, 31959 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on /home/kbs/ex_reinforcement_learning/Ex10/latex/e10.pdf (1 page, 46576 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 43 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  4 named destinations out of 1000 (max. 500000)
  24593 words of extra memory for PDF output out of 24883 (max. 10000000)
 
