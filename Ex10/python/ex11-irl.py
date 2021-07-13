@@ -74,17 +74,18 @@ def get_naive_pol(env, trajs):
     n_states = env.observation_space.n
     n_actions = env.action_space.n
 
-    pairs = {}
+    sa_pairs = []
+    for s in range(n_states):
+        for a in range(n_actions):
+            sa_pairs.append((s,a))
+
+    pairs = dict.fromkeys(sa_pairs, 0)
 
     # count pairs
     for traj in trajs:
         for pair in traj:
 
-            if pair in pairs:
                 pairs[pair] += 1
-            
-            else:
-                pairs[pair] = 1
 
 
     max_pairs = {}
@@ -97,79 +98,100 @@ def get_naive_pol(env, trajs):
 
         for a in range(n_actions):
 
-            if (s,a) in pairs:
-                if pairs[(s,a)] > score:
-                    max_a = a
+            if pairs[(s,a)] > score:
+                max_a = a
+                score = pairs[(s,a)]
 
         max_pairs[s] = max_a
 
     return max_pairs
 
 
-
-# get probabilities for p(s'|s,a) from experience
-def get_state_probs(env, trajs):
+# get probabilities for p(s'|s,a) from environment
+def get_transition_probs(env):
 
     n_states = env.observation_space.n
-    n_actions = env.action_space.n
-
-    # counts(s,a,s')
-    counts = np.zeros((n_states, n_actions, n_states))
-
-    for traj in trajs:
-        for i in range(len(traj)-1):
-            
-            s_new = traj[i+1][0]
-            s = traj[i][0]
-            a = traj[i][1]
-
-            counts[s][a][s_new] += 1
+    n_actions = env.action_space.n 
 
 
+    # probs[s][a][s_new]
     probs = np.zeros((n_states, n_actions, n_states))
 
-    # calc prob for each s' for each (s,a)
-    for s in range(n_states):
+    for s in range(len(env_dist)):
+
         for a in range(n_actions):
 
-            total_states = int(sum(counts[s][a]))
+            sa = env_dist[s][a]
 
-            for s_new in range(n_actions):
+            for prob in sa:
 
-                if total_states != 0:
-                    probs[s][a][s_new] = counts[s][a][s_new]/total_states
-    
+                probs[s][a][prob[1]] = prob[0] 
 
     return probs
 
 
-# calc state frequencies
-def get_state_freqs(env, trajs, mi, pol, t):
+# get distribution pi(a|s) from experience
+def get_reference_dist(env, trajs):
 
     n_states = env.observation_space.n
     n_actions = env.action_space.n
 
-    mi_new = np.ones(n_states)
+    dist = np.zeros((n_states, n_actions))
 
-    probs = get_state_probs(env, trajs)
+    # create dict for {s: [a0, a1, a2, a3]}
+    sa_pairs = {}
+    for s in range(n_states):
+            sa_pairs[s] = [0]*n_actions
 
-    for s_n in range(n_states):
-        new_val = 0
+    # count pairs in data
+    for traj in trajs:
+        for pair in traj:
+                sa_pairs[pair[0]][pair[1]] += 1 
 
-        for s in range(n_states):
+    # calc probs for dist
+    for s in sa_pairs:
 
+        total_occurances = sum(sa_pairs[s])
+        
+        if total_occurances > 0:
             for a in range(n_actions):
+                dist[s][a] = sa_pairs[s][a]/total_occurances
 
-                new_val = probs[s][a][s_n]*mi[s]*pol((s,a))
-
-
-        mi_new[s_n] = new_val
+    return dist
 
 
-    #s_freq = (1/T) * 
+# calc state frequencies
+def get_state_freqs(env, trajs, pol, T):
+
+    n_states = env.observation_space.n
+    n_actions = env.action_space.n
+
+    mi = np.ones(n_states)
+
+    # transition probs p(s'|s,a)
+    trans_probs = get_transition_probs(env)
+    #ref_probs = 
+
     
-    #return s_freqs
-    return 0
+    for t in range(T):
+
+        mi_new = mi
+
+        for s_n in range(n_states):
+            new_val = 0
+
+            for s in range(n_states):
+
+                for a in range(n_actions):
+
+                    new_val += probs[s][a][s_n]*mi[s]*pol[s]
+
+            mi_new[s_n] = new_val
+
+
+    s_freq = (1/T) * mi_new
+
+    return s_freq
 
 
 
@@ -180,7 +202,7 @@ def main():
     env.seed(0)
     np.random.seed(0)
     expertpolicy = [0, 3, 0, 3, 0, 0, 0, 0, 3, 1, 0, 0, 0, 2, 1, 0]
-    trajs = generate_demonstrations(env, expertpolicy, 0.1, 100)  # list of trajectories
+    trajs = generate_demonstrations(env, expertpolicy, 0.1, 20)  # list of trajectories
     print("one trajectory is a list with (state, action) pairs:")
     print (trajs[0])
 
@@ -192,12 +214,15 @@ def main():
 
 
     ### (b) state visiting freqs
-
+    T = max([len(traj) for traj in trajs])
+    #state_freqs = get_state_freqs(env, trajs, naive_pol, T)
     #probs = get_state_probs(env, trajs)
+    dit = get_reference_dist(env, trajs)
 
 
     # get pol
     #opt_pol = value_iteration(env, rewards)
+    print("blub")
 
 
 
